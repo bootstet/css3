@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 共有s个版本
+    var s;
+    // 从最后一个往前找，正确返回该版本数，否则继续往前找  IsBug(s)为已知api
+    function findBug(s) {
+        for (var i = s - 1; i > 0; i--) {
+            if (IsBug(i)) {
+                return i;
+            }
+        }
+    }
+</script>
+
+</html>

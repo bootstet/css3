@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html {
+            background: -webkit-radial-gradient(center, ellipse, #430d6d 0%, #000000 100%);
+            background: radial-gradient(ellipse at center, #430d6d 0%, #000000 100%);
+            height: 100%;
+        }
+
+        .stage {
+            margin-top: 300px;
+            margin-left: 300px;
+            position: relative;
+            perspective: 1000px;  
+            -webkit-perspective: 1000px;  
+        }
+
+        .cube {
+            animation: xuanzhuan 2s linear infinite;
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            position: relative;
+            /* opacity: 0.5; */
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg) rotateY(-30deg);
+            -webkit-transform: rotateX(-30deg) rotateY(-30deg);
+            
+        }
+
+        .font,
+        .back,
+        .left,
+        .right,
+        .top,
+        .bottom {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0.8;
+            background: -webkit-linear-gradient(  
+           left,  
+           rgba(54, 226, 248, 0.5) 0px,  
+           rgba(54, 226, 248, 0.5) 3px,  
+           rgba(0, 0, 0, 0) 0px),  
+                   -webkit-linear-gradient(  
+           top,  
+           rgba(54, 226, 248, 0.5) 0px,  
+           rgba(54, 226, 248, 0.5) 3px,  
+           rgba(0, 0, 0, 0) 0px);  
+  
+       -webkit-background-size: 2.5em 2.5em;  
+        }
+
+        .font {
+            background-color: red;
+            transform: translateZ(100px);
+        }
+
+        .back {
+            background-color: blue;
+            transform: translateZ(-100px);
+        }
+
+        .left {
+            background-color: skyblue;
+            transform: translateX(-100px) rotateY(90deg);
+        }
+
+        .right {
+            background-color: yellow;
+            transform: translateX(100px) rotateY(-90deg);
+        }
+
+        .top {
+            background-color: #eee;
+            transform: translateY(-100px) rotateX(90deg);
+        }
+
+        .bottom {
+            background-color: orchid;
+            transform: translateY(100px) rotateX(90deg);
+        }
+
+        @keyframes xuanzhuan {
+            from {
+                transform:translateZ(-20px) rotateX(0deg) rotateY(0deg);
+            }
+            to {
+                transform:translateZ(-20px) rotateY(360deg) rotateY(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <div class="cube">
+            <div class="font"></div>
+            <div class="back"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+    </div>
+</body>
+
+</html>
